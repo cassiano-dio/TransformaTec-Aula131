@@ -10,7 +10,7 @@ export default function ContactRegister(){
     let handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            let res = await fetch("http://localhost:8080/api/users/${userId}/contacts?gId=${groupId}",{
+            let res = await fetch('http://localhost:8080/api/users/' + userId + '/contacts?gId=' + groupId,{
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body : JSON.stringify({
@@ -18,9 +18,13 @@ export default function ContactRegister(){
                 }),
             });
 
-            let resJson = await res.json();
+            console.log(res)
 
-            if (res.status === 200) {
+            //let resJson = await res.json();
+
+            //console.log(resJson)
+
+            if (res.status === 200 || res.status === 201) {
                 setName("");
                 setMessage("Contato criado com sucesso");
             } else {
