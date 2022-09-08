@@ -38,6 +38,9 @@ export default function GroupRegister(){
 
     return (
         <div>
+
+            <h3>Cadastro de grupo</h3>
+
             <form onSubmit={handleSubmit}>
 
                 <input 

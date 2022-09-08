@@ -46,6 +46,8 @@ export default function SignIn(){
 
         <div>
 
+            <h3>Cadastro</h3>
+
             <form onSubmit={handleSubmit}>
 
                 <input 

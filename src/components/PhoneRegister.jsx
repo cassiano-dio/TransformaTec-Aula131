@@ -43,6 +43,8 @@ export default function PhoneRegister() {
     return (
         <div>
 
+            <h3>Registro de telefone</h3>
+            
             <form onSubmit={handleSubmit}>
                 <input
                     type="number"

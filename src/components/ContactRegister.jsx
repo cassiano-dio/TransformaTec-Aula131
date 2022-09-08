@@ -38,6 +38,8 @@ export default function ContactRegister(){
     return (
         <div>
 
+            <h3>Cadastro de contato</h3>
+
             <form onSubmit={handleSubmit}>
 
                 <input 
