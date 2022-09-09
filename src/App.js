@@ -27,6 +27,7 @@ function App() {
       <PhoneList />
       <br /> */}
       <Home />
+      <br />
     </div>
   );
 }
