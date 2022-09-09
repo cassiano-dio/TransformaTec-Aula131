@@ -1,7 +1,12 @@
 import { useState } from "react";
+import AddButton from "./AddButton";
 
 export default function GroupRegister(){
 
+    const formStyle = {
+        display: 'flex',
+        flexDirection: 'column'
+    }
 
     const [name, setName] = useState("");
     const [userId, setUserId] = useState("");
@@ -41,7 +46,7 @@ export default function GroupRegister(){
 
             <h3>Cadastro de grupo</h3>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={formStyle}>
 
                 <input 
                     type="text"
@@ -57,7 +62,7 @@ export default function GroupRegister(){
                     onChange={(e) => setName(e.target.value)}
                 />
 
-                <button type="submit">Cadastrar Grupo</button>
+                <AddButton type="submit">Cadastrar Grupo</AddButton>
 
                 <div className="message">{message ? <p>{message}</p> : null}</div>
 

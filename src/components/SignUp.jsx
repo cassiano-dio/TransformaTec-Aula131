@@ -1,4 +1,6 @@
 import { useState } from "react";
+import styles from "../styles/styles.module.css"
+import AddButton from "./AddButton";
 
 export default function SignIn(){
 
@@ -7,8 +9,17 @@ export default function SignIn(){
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
 
+    
+
+    const formStyle = {
+        display: 'flex',
+        flexDirection: 'column'
+    }
+
+
     let handleSubmit = async(e) => {
         e.preventDefault();
+        
 
         try {
             
@@ -48,12 +59,13 @@ export default function SignIn(){
 
             <h3>Cadastro</h3>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={formStyle}>
 
                 <input 
                     type="text"
                     value={username}
                     placeholder={"Nome"}
+                    className={styles.input}
                     onChange={(e) => SetUsername(e.target.value)}   
                 />
 
@@ -61,6 +73,7 @@ export default function SignIn(){
                     type="email" 
                     value={email}
                     placeholder={"Email"}
+                    className={styles.input}
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
@@ -68,10 +81,11 @@ export default function SignIn(){
                     type="password" 
                     value={password}
                     placeholder={"Senha"}
+                    className={styles.input}
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button type="submit">SignUp</button>
+                <AddButton>SignUp</AddButton>
 
                 <div className="message">{message ? <p>{message}</p> : null}</div>
 
